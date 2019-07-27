@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Project</title>
+        <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .heading { 
+                color: pink;
+            }
+            /* use # for ids */ 
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <!-- CREATING REACT ELEMENTS -->
+        <!-- <script type="text/javascript">
+        ReactDOM.render(
+            React.createElement(
+                "div",
+                null, // {"style": {"color": "red"}}, 
+                React.createElement(
+                    "h1",
+                    null,
+                    "Oh hello!"
+                )
+                ), // type of element, properties, child of the element
+            document.getElementById("root")
+        );
+        </script> -->
+
+
+        <!-- JSX SYNTAX -->
+        <!-- <script type="text/babel">
+            let city = "Madrid"; // JSX element 
+
+            ReactDOM.render(
+                <h1 className="heading">Hello {city}</h1>, // JSX syntax allows you to use tags so you don't always have to do React.createElement. good for nesting
+                document.getElementById("root")
+            );
+        </script> -->
+
+
+
+        <!-- CREATING A COMPONENT -->
+        <!-- <script type="text/babel">
+            // components must be capitalized 
+            const Hello = ({library, message}) => { // can also use parentheses without a return 
+                return (
+                    <div className="heading">
+                        <h1>Welcome to {library}</h1>
+                        <p>{message}</p>
+                    </div>
+                )
+            };
+
+            ReactDOM.render(
+                <Hello library="React" message="enjoy!"/>, // same name as component 
+                document.getElementById("root")
+            );
+        </script> -->
+
+        
+
+        <!-- COMPONENT HIERARCHY  -->
+        <!-- <script type="text/babel">
+            const Lake = ({name}) => <h1>{name}</h1>;
+
+            const App = () => { // App component renders Lake component, passing name down as a property 
+                return (
+                    <div>
+                        <Lake name="Lake Tahoe" />
+                        <Lake name="Angora Lake" />
+                        <Lake name="Shirley Lake" />
+                        <Lake name="Cathedral Lake" />
+                    </div>
+                )
+            }
+
+            ReactDOM.render(
+                <App />,
+                document.getElementById("root")
+            );
+        </script> -->
+
+
+
+        <!-- JAVASCRIPT CLASS COMPONENTS-->
+        <!-- <script type="text/babel">
+            const Lake = ({name}) => <h1>{name}</h1>;
+            class App extends React.Component {
+                render() { // render describes what should be rendered to the page. this method should always be inside component class
+                    return (
+                        <div>
+                            <Lake name="Lake Tahoe" />
+                            <Lake name="Angora Lake" />
+                            <Lake name="Shirley Lake" />
+                            <Lake name="Cathedral Lake" />
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(
+                <App />,
+                document.getElementById("root")
+            );
+        </script> -->
+
+
+        <!-- UNDERSTANDING STATE + LOGIN EVENT -->
+        <!-- <script type="text/babel">
+            const Lake = ({name}) => <h1>{name}</h1>;
+            class App extends React.Component {
+                state = {
+                    loggedIn: false
+                }
+                logIn = () => this.setState({loggedIn: true}) // every time you call the logIn state function, loggedIn will be true 
+                logOut = () => this.setState({loggedIn: false}) 
+                render() { // render describes what should be rendered to the page. this method should always be inside component class
+                    return (
+                        <div>
+                            <button onClick={this.logIn}>Log In</button>
+                            <button onClick={this.logOut}>Log Out</button>
+                            <div>The user is {this.state.loggedIn ? "logged in" : "not logged in"}. </div> 
+                            <Lake name="Lake Tahoe" />
+                            <Lake name="Angora Lake" />
+                            <Lake name="Shirley Lake" />
+                            <Lake name="Cathedral Lake" />
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(
+                <App />,
+                document.getElementById("root")
+            );
+        </script> -->
+
+        
+        
+        <!-- CONDITIONAL RENDERS -->
+        <!-- if summer is true, display the lake. when false, display ski resort -->
+        <!-- <script type="text/babel">
+            const Lake = ({name}) => <h1>{name}</h1>;
+            const SkiResort = ({name}) => <h1>{name}</h1>;
+
+            const App = ({summer}) => (
+                <div>
+                    {summer 
+                        ? <Lake name="Lake Tahoe"/> 
+                        : <SkiResort name="Alpine Meadows"/>} 
+                </div>
+            )
+            ReactDOM.render(
+                <App summer={true}/>,
+                document.getElementById("root")
+            );
+        </script> -->
+
+
+
+
+        <!-- RENDER COMPONENTS FROM A LIST -->
+        <!-- <script type="text/babel">
+            const lakeList = [
+                "Echo Lake", 
+                "Maud Lake", 
+                "Cascade Lake"
+            ];
+
+            const App = ({lakes}) => (
+                <ul>
+                    {lakes.map((lake, i) => // for each lake, return a list item. when you render a list w/ dynamic values, give each a key so that react can re-render appropriately
+                        <li key={i}>{lake}</li>
+                    )}
+                </ul>
+            )
+            ReactDOM.render(
+                <App lakes={lakeList}/>,
+                document.getElementById("root")
+            );
+        </script> -->
+
+
+
+
+        <!-- RENDER COMPONENTS FROM A LIST OF OBJECTS 
+        moved to index.js and App.js -->
+
+        <script type="text/babel">
+
+
+        </script>
+
+    </body>
+</html>
+
+
+<!-- A component is the way a React app represents a UI element. 
+Components let you create user interfaces with independent, reusable pieces. 
+A function that takes in data as arguments and returns some React elements or user interface 
+
+You can use component hierarchy to display a certain number of components -->
+
+<!-- Props is an object in React that contains properties about the component. 
+Allows you to display dynamic data within a component. -->
+
+<!-- When a component state changes, the render call will be called again to re-render the state change -->
+
+
+
+
+<!-- src folder is where all your components live-->
