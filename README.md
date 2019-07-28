@@ -1,3 +1,3 @@
-# learn-react
+# react-playground
 
-#### Created sample React app using create-react-app
+#### Playground for learning React.js and creating sample React apps using create-react-app
